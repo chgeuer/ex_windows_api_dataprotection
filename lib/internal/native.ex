@@ -20,13 +20,13 @@ defmodule Windows.API.DataProtection.Native do
     ),
     variants: %{
       "x86_64-pc-windows-msvc" => other_variants,
-      "x86_64-pc-windows-gnu" => other_variants,
+      "x86_64-pc-windows-gnu" => other_variants
     },
     # We don't use any features of newer NIF versions, so 2.15 is enough.
     nif_versions: ["2.15"],
     mode: mode
-    #force_build: System.get_env("EXPLORER_BUILD") in ["1", "true"]
 
+  # force_build: System.get_env("EXPLORER_BUILD") in ["1", "true"]
 
   def nif_wrap(_cleartext_bytes), do: :erlang.nif_error(:nif_not_loaded)
 

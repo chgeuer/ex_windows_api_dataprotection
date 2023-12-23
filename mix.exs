@@ -14,10 +14,14 @@ defmodule Windows.API.DataProtection.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: [
-        "rust.lint": ["cmd cargo clippy --manifest-path=native/ex_windows_api_dataprotection_rustler/Cargo.toml -- -Dwarnings"],
-        "rust.fmt": ["cmd cargo fmt --manifest-path=native/ex_windows_api_dataprotection_rustler/Cargo.toml --all"]
-        #"localstack.setup": ["cmd ./test/support/setup-localstack.sh"],
-        #ci: ["format", "rust.fmt", "rust.lint", "test"]
+        "rust.lint": [
+          "cmd cargo clippy --manifest-path=native/ex_windows_api_dataprotection_rustler/Cargo.toml -- -Dwarnings"
+        ],
+        "rust.fmt": [
+          "cmd cargo fmt --manifest-path=native/ex_windows_api_dataprotection_rustler/Cargo.toml --all"
+        ]
+        # "localstack.setup": ["cmd ./test/support/setup-localstack.sh"],
+        # ci: ["format", "rust.fmt", "rust.lint", "test"]
       ]
     ]
   end
@@ -30,9 +34,9 @@ defmodule Windows.API.DataProtection.MixProject do
 
   defp deps do
     [
-       {:rustler_precompiled, "~> 0.7"},
-       #{:rustler, "~> 0.30.0", runtime: false},
-       {:rustler, "~> 0.30.0", optional: not (@dev? or @force_build?)}
+      {:rustler_precompiled, "~> 0.7"},
+      # {:rustler, "~> 0.30.0", runtime: false},
+      {:rustler, "~> 0.30.0", optional: not (@dev? or @force_build?)}
     ]
   end
 end

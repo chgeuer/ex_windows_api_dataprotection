@@ -16,16 +16,16 @@ defmodule Windows.API.DataProtection do
     :world
   end
 
-  @doc """  
+  @doc """
   Wraps a binary for the given user.
   """
   def wrap(binary) when is_binary(binary) do
     Windows.API.DataProtection.Native.nif_wrap(binary)
   end
 
-  @doc """  
+  @doc """
   Unwraps a binary for the given user.
-  
+
   ## Examples
 
       iex> "some confidential input value"
