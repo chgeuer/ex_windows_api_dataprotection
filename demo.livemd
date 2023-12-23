@@ -20,6 +20,6 @@ import Windows.API.DataProtection, only: [wrap: 1, unwrap: 1]
 ```elixir
 "#{System.get_env("USERPROFILE")}\\.azure\\msal_token_cache.bin"
 |> File.read!()
-|> DPAPI.unwrap()
+|> Windows.API.DataProtection.unwrap()
 |> IO.puts()
 ```

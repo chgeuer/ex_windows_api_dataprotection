@@ -42,6 +42,7 @@ defmodule Windows.API.DataProtection.MixProject do
 
   defp deps do
     [
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:rustler_precompiled, "~> 0.7"},
       {:rustler, "~> 0.30.0", runtime: false, optional: not (@dev? or @force_build?)}
     ]
@@ -52,9 +53,6 @@ defmodule Windows.API.DataProtection.MixProject do
       main: "Windows.API.DataProtection",
       source_ref: "v#{@version}",
       source_url: @source_url,
-      groups_for_modules: [
-        Windows.API.DataProtection
-      ],
       extras: ["demo.livemd"]
     ]
   end
