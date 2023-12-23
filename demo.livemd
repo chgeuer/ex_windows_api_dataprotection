@@ -2,8 +2,9 @@
 
 ```elixir
 Mix.install([
+  # {:ex_windows_api_dataprotection, git: "https://github.com/chgeuer/ex_windows_api_dataprotection.git", tag: "v0.1.0"}
   {:ex_windows_api_dataprotection,
-   git: "https://github.com/chgeuer/ex_windows_api_dataprotection.git", tag: "v0.1.0"}
+   path: "C:\\Users\\chgeuer\\Desktop\\DPAPI\\ex_windows_api_dataprotection"}
 ])
 ```
 
@@ -18,6 +19,6 @@ Mix.install([
 ```elixir
 "#{System.get_env("USERPROFILE")}\\.azure\\msal_token_cache.bin"
 |> File.read!()
-|> DPAPI.unwrap()
+|> Windows.API.DataProtection.unwrap()
 |> IO.puts()
 ```
