@@ -12,6 +12,7 @@ defmodule Windows.API.DataProtection.MixProject do
       version: @version,
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
+      description: description(),
       deps: deps(),
       package: package(),
       aliases: [
@@ -26,6 +27,10 @@ defmodule Windows.API.DataProtection.MixProject do
       ],
       source_url: @source_url,
     ]
+  end
+
+  defp description() do
+    "A (Windows-specific) wrapper to access the Data Protection API (DPAPI)."
   end
 
   def application do
