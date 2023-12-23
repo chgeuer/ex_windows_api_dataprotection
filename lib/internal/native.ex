@@ -19,8 +19,7 @@ defmodule Windows.API.DataProtection.Native do
       x86_64-pc-windows-msvc
       x86_64-pc-windows-gnu
     ),
-    # We don't use any features of newer NIF versions, so 2.15 is enough.
-    # nif_versions: ["2.15"],
+    nif_versions: ["2.15"],
     mode: mode
 
   # force_build: System.get_env("EXPLORER_BUILD") in ["1", "true"]
