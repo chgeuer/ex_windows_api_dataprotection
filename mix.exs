@@ -4,15 +4,16 @@ defmodule Windows.API.DataProtection.MixProject do
   @source_url "https://github.com/chgeuer/ex_windows_api_dataprotection"
   @version "0.1.0"
   @dev? String.ends_with?(@version, "-dev")
-  @force_build? System.get_env("EXPLORER_BUILD") in ["1", "true"]
+  @force_build? System.get_env("DPAPI_BUILD") in ["1", "true"]
 
   def project do
     [
       app: :ex_windows_api_dataprotection,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      package: package(),
       aliases: [
         "rust.lint": [
           "cmd cargo clippy --manifest-path=native/ex_windows_api_dataprotection_rustler/Cargo.toml -- -Dwarnings"
@@ -37,6 +38,21 @@ defmodule Windows.API.DataProtection.MixProject do
       {:rustler_precompiled, "~> 0.7"},
       # {:rustler, "~> 0.30.0", runtime: false},
       {:rustler, "~> 0.30.0", optional: not (@dev? or @force_build?)}
+    ]
+  end
+
+  defp package do
+    [
+      files: [
+        "lib",
+        "native",
+        "mix.exs",
+        "README.md",
+        "LICENSE"
+      ],
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => @source_url},
+      maintainers: ["Christian Geuer-Pollmann"]
     ]
   end
 end
