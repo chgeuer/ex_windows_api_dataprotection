@@ -1,12 +1,19 @@
-# Untitled notebook
+# Explore the Windows Data Protection API from Elixir
 
 ```elixir
 Mix.install([
-  {:dpapi, path: "C:\\github\\chgeuer\\Windows-DPAPI-with-Zig\\elixir"}
+  {:ex_windows_api_dataprotection,
+   git: "https://github.com/chgeuer/ex_windows_api_dataprotection.git", tag: "v0.1.0"}
 ])
 ```
 
 ## Section
+
+```elixir
+"Hello world"
+|> Windows.API.DataProtection.wrap()
+|> Windows.API.DataProtection.unwrap()
+```
 
 ```elixir
 "#{System.get_env("USERPROFILE")}\\.azure\\msal_token_cache.bin"

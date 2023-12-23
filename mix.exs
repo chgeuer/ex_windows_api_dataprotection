@@ -3,7 +3,7 @@ defmodule Windows.API.DataProtection.MixProject do
 
   def project do
     [
-      app: :ex_windows_api_dataprotection_rustler,
+      app: :ex_windows_api_dataprotection,
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
