@@ -16,10 +16,10 @@ defmodule Windows.API.DataProtection.MixProject do
       package: package(),
       aliases: [
         "rust.lint": [
-          "cmd cargo clippy --manifest-path=native/ex_windows_api_dataprotection_rustler/Cargo.toml -- -Dwarnings"
+          "cmd cargo clippy --manifest-path=native/ex_windows_api_dataprotection/Cargo.toml -- -Dwarnings"
         ],
         "rust.fmt": [
-          "cmd cargo fmt --manifest-path=native/ex_windows_api_dataprotection_rustler/Cargo.toml --all"
+          "cmd cargo fmt --manifest-path=native/ex_windows_api_dataprotection/Cargo.toml --all"
         ]
         # "localstack.setup": ["cmd ./test/support/setup-localstack.sh"],
         # ci: ["format", "rust.fmt", "rust.lint", "test"]

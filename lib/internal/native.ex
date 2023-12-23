@@ -8,11 +8,11 @@ defmodule Windows.API.DataProtection.Native do
 
   # use Rustler,
   #   otp_app: :ex_windows_api_dataprotection,
-  #   crate: "ex_windows_api_dataprotection_rustler"
+  #   crate: "ex_windows_api_dataprotection"
 
   use RustlerPrecompiled,
     otp_app: :ex_windows_api_dataprotection,
-    crate: "ex_windows_api_dataprotection_rustler",
+    crate: "ex_windows_api_dataprotection",
     version: version,
     base_url: "#{github_url}/releases/download/v#{version}",
     targets: ~w(

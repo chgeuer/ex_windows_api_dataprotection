@@ -25,7 +25,7 @@ jobs:
       - uses: actions/cache@v3
         with:
           path: |
-            _build/test/lib/explorer/native/ex_windows_api_dataprotection_rustler
+            _build/test/lib/explorer/native/ex_windows_api_dataprotection
             ~/.cargo/bin/
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
