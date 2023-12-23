@@ -23,7 +23,8 @@ defmodule Windows.API.DataProtection.MixProject do
         ]
         # "localstack.setup": ["cmd ./test/support/setup-localstack.sh"],
         # ci: ["format", "rust.fmt", "rust.lint", "test"]
-      ]
+      ],
+      source_url: @source_url,
     ]
   end
 
@@ -36,24 +37,19 @@ defmodule Windows.API.DataProtection.MixProject do
   defp deps do
     [
       {:rustler_precompiled, "~> 0.7"},
-      # {:rustler, "~> 0.30.0", runtime: false},
-      {:rustler, "~> 0.30.0", optional: not (@dev? or @force_build?)}
+      {:rustler, "~> 0.30.0", runtime: false, optional: not (@dev? or @force_build?)}
     ]
   end
 
   defp package do
     [
-      files: [
-        "lib",
-        "native",
-        "checksum-*.exs",
-        "mix.exs",
-        "README.md",
-        "LICENSE"
-      ],
+      name: "ex_windows_api_dataprotection",
+      files: ~w(lib native checksum-*.exs mix.exs README.md LICENSE),
       licenses: ["Apache-2.0"],
-      links: %{"GitHub" => @source_url},
-      maintainers: ["Christian Geuer-Pollmann"]
+      links: %{
+        "GitHub" => @source_url
+      },
+      maintainers: ["Dr. Christian Geuer-Pollmann"]
     ]
   end
 end
