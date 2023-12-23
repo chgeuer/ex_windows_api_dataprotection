@@ -1,7 +1,12 @@
+#[cfg(target_os = "windows")]
 use rustler::types::OwnedBinary;
+
+#[cfg(target_os = "windows")]
 use rustler::{Binary, Env, Error, Term};
+#[cfg(target_os = "windows")]
 use std::ptr;
 // use rustler::{Atom, NifStruct, ResourceArc};
+#[cfg(target_os = "windows")]
 use std::io::Write;
 
 // https://stackoverflow.com/questions/65969779/rust-ffi-with-windows-cryptounprotectdata
@@ -14,6 +19,7 @@ pub struct Blob {
     pb_data: *const u8,
 }
 
+#[cfg(target_os = "windows")]
 impl Blob {
     pub fn new(buffer: &[u8]) -> Blob {
         Blob {
@@ -27,6 +33,7 @@ impl Blob {
     }
 }
 
+#[cfg(target_os = "windows")]
 impl Drop for Blob {
     fn drop(&mut self) {
         unsafe {
@@ -172,13 +179,13 @@ fn nif_unwrap<'a>(env: Env<'a>, input: Binary) -> Result<Term<'a>, Error> {
 
 #[cfg(not(target_os = "windows"))]
 #[rustler::nif]
-fn nif_wrap<'a>(_env: Env<'a>, _input: Binary) -> Result<Term<'a>, Error> {
+fn nif_wrap<'a>(env: Env<'a>, _input: Binary) -> Result<Term<'a>, Error> {
     Ok(atoms::only_available_on_windows().to_term(env))
 }
 
 #[cfg(not(target_os = "windows"))]
 #[rustler::nif]
-fn nif_unwrap<'a>(_env: Env<'a>, _input: Binary) -> Result<Term<'a>, Error> {
+fn nif_unwrap<'a>(env: Env<'a>, _input: Binary) -> Result<Term<'a>, Error> {
     Ok(atoms::only_available_on_windows().to_term(env))
 }
 
