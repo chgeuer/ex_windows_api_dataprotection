@@ -46,6 +46,7 @@ defmodule Windows.API.DataProtection.MixProject do
       files: [
         "lib",
         "native",
+        "checksum-*.exs",
         "mix.exs",
         "README.md",
         "LICENSE"
