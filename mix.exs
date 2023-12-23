@@ -2,7 +2,7 @@ defmodule Windows.API.DataProtection.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/chgeuer/ex_windows_api_dataprotection"
-  @version "0.1.1"
+  @version "0.1.2-dev"
   @dev? String.ends_with?(@version, "-dev")
   @force_build? System.get_env("DPAPI_BUILD") in ["1", "true"]
 
