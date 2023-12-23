@@ -20,9 +20,8 @@ defmodule Windows.API.DataProtection.Native do
       x86_64-pc-windows-gnu
     ),
     nif_versions: ["2.15"],
-    mode: mode
-
-  # force_build: System.get_env("EXPLORER_BUILD") in ["1", "true"]
+    mode: mode,
+    force_build: System.get_env("DPAPI_BUILD") in ["1", "true"]
 
   def nif_wrap(_cleartext_bytes), do: :erlang.nif_error(:nif_not_loaded)
 
