@@ -13,7 +13,7 @@ dependencies = [
 
 [[package]]
 name = "ex_windows_api_dataprotection"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "rustler",
  "winapi",
