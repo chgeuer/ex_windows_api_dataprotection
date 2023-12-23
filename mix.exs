@@ -26,7 +26,7 @@ defmodule Windows.API.DataProtection.MixProject do
         # "localstack.setup": ["cmd ./test/support/setup-localstack.sh"],
         # ci: ["format", "rust.fmt", "rust.lint", "test"]
       ],
-      source_url: @source_url,
+      source_url: @source_url
     ]
   end
 

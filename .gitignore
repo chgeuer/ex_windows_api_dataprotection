@@ -26,3 +26,4 @@ rust_playground-*.tar
 /tmp/
 
 /priv/
+/checksum-Elixir.Windows.API.DataProtection.Native.exs
