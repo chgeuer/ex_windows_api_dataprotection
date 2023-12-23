@@ -14,6 +14,7 @@ defmodule Windows.API.DataProtection.MixProject do
       start_permanent: Mix.env() == :prod,
       description: description(),
       deps: deps(),
+      docs: docs(),
       package: package(),
       aliases: [
         "rust.lint": [
@@ -43,6 +44,18 @@ defmodule Windows.API.DataProtection.MixProject do
     [
       {:rustler_precompiled, "~> 0.7"},
       {:rustler, "~> 0.30.0", runtime: false, optional: not (@dev? or @force_build?)}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "Windows.API.DataProtection",
+      source_ref: "v#{@version}",
+      source_url: @source_url,
+      groups_for_modules: [
+        Windows.API.DataProtection
+      ],
+      extras: ["demo.livemd"]
     ]
   end
 
