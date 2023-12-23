@@ -1,8 +1,11 @@
 #[cfg(target_os = "windows")]
 use rustler::types::OwnedBinary;
 
-#[cfg(target_os = "windows")]
-use rustler::{Binary, Env, Error, Term};
+use rustler::Binary;
+use rustler::Env;
+use rustler::Error;
+use rustler::Term;
+
 #[cfg(target_os = "windows")]
 use std::ptr;
 // use rustler::{Atom, NifStruct, ResourceArc};
