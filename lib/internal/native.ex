@@ -18,6 +18,8 @@ defmodule Windows.API.DataProtection.Native do
     targets: ~w(
       x86_64-pc-windows-msvc
       x86_64-pc-windows-gnu
+      x86_64-unknown-linux-gnu
+      aarch64-unknown-linux-gnu
     ),
     nif_versions: ["2.15"],
     mode: mode,
