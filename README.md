@@ -30,7 +30,7 @@ However, on Windows, it's protected / encrypted, using DPAPI. With this module, 
 
 ```elixir
 Mix.install([
-  {:ex_windows_api_dataprotection, "~> 0.1.2"}
+  {:ex_windows_api_dataprotection, "~> 0.1.3"}
 ])
 
 [System.user_home!(), ".azure", "msal_token_cache.bin"]
